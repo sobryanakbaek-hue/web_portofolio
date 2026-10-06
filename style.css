@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --ungu-dalam: #5B21B6;
+    --ungu-terang: #8B5CF6;
+    --biru-neon: #06B6D4;
+    --biru-sangat-terang: #ECFDF5;
+    --gelap: #1F2937;
+    --putih: #FFFFFF;
+    --gradien-utama: linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #06B6D4 100%);
+    --gradien-latar: linear-gradient(135deg, #F5F3FF 0%, #ECFEFF 100%);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--putih);
+    color: var(--gelap);
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 5%;
+}
+
+/* Header — Gradien Keren */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--gradien-utama);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    z-index: 100;
+    box-shadow: 0 4px 25px rgba(91, 33, 182, 0.35);
+}
+
+.logo {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--putih);
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+#menu-icon {
+    font-size: 3.5rem;
+    color: var(--putih);
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--putih);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: right;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--biru-neon);
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #C4B5FD;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Home — Tampilan Utama */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 14rem;
+    gap: 4rem;
+    background: var(--gradien-latar);
+}
+
+.home-img img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 5px var(--ungu-terang), 0 0 30px rgba(139, 92, 246, 0.4), 0 0 60px rgba(6, 182, 212, 0.2);
+    transition: all 0.4s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 8px var(--biru-neon), 0 0 40px rgba(6, 182, 212, 0.5), 0 0 70px rgba(91, 33, 182, 0.3);
+}
+
+.home-content h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: var(--gradien-utama);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sub-judul {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--ungu-terang);
+    font-weight: 700;
+    position: relative;
+}
+
+span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--biru-neon);
+    border-radius: 2px;
+}
+
+.deskripsi {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    color: #4B5563;
+}
+
+.social-media {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.social-media a {
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 2px solid transparent;
+    border-image: var(--gradien-utama) 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: var(--ungu-dalam);
+    background: linear-gradient(var(--putih), var(--putih)) padding-box;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    background: var(--gradien-utama);
+    color: var(--putih);
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(91, 33, 182, 0.4);
+}
+
+.btn {
+    padding: 1.3rem 3.8rem;
+    background: var(--gradien-utama);
+    border-radius: 5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--putih);
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(91, 33, 182, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
+}
+
+/* About Section */
+.about {
+    background: var(--biru-sangat-terang);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.heading {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.heading span {
+    background: var(--gradien-utama);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 550px;
+    color: #4B5563;
+}
+
+.about-img img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 5px var(--ungu-terang), 0 0 30px rgba(139, 92, 246, 0.3);
+    transition: 0.4s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px var(--biru-neon), 0 0 45px rgba(6, 182, 212, 0.4);
+}
+
+/* Services / Keahlian */
+.services {
+    background: var(--putih);
+}
+
+.services .heading {
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 5.5rem;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.services-box {
+    background: var(--gradien-latar);
+    padding: 4rem 3rem;
+    border-radius: 2.5rem;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--putih), var(--putih)), var(--gradien-utama);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.services-box:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(91, 33, 182, 0.15);
+}
+
+.services-box i {
+    font-size: 5.5rem;
+    background: var(--gradien-utama);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+}
+
+.services-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--ungu-dalam);
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #4B5563;
+}
+
+/* Contact */
+.contact {
+    background: var(--gradien-latar);
+}
+
+.contact .heading {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: 2px solid var(--ungu-terang);
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    background: var(--putih);
+    color: var(--gelap);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--biru-neon);
+    box-shadow: 0 0 0 5px rgba(6, 182, 212, 0.15);
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: none;
+    margin-bottom: 2rem;
+}
+
+.contact .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
